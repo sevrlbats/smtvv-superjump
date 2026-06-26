@@ -1,0 +1,7 @@
+# Build artifacts (the prebuilt xinput1_3.dll IS committed for convenience)
+*.obj
+*.exp
+*.lib
+
+# Runtime log written next to the game EXE
+SMTVVFlight.log
