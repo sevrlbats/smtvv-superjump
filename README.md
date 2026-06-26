@@ -30,6 +30,25 @@ Run `uninstall.bat`, or choose **[2] Uninstall** in `install.bat`. (Or delete
 `xinput1_3.dll` from `SMT5V\Project\Binaries\Win64\`.) Steam → Verify Integrity
 of Game Files also removes it.
 
+## Steam Deck / Linux
+
+Steam Deck runs the game through Proton, so the mod works there — only the
+installer differs. In **Desktop Mode**, open a terminal (Konsole) in this folder:
+
+```bash
+chmod +x install.sh
+./install.sh
+```
+
+Then add this to the game's Steam **Launch Options** (Properties → General), or
+Proton won't load the proxy DLL:
+
+```text
+WINEDLLOVERRIDES="xinput1_3=n,b" %command%
+```
+
+Uninstall with `./uninstall.sh`.
+
 ## How it works
 
 The mod ships as `xinput1_3.dll`, a proxy DLL the game already imports. It
